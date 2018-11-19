@@ -39,7 +39,7 @@ h1 {
  */
 
 .deck {
-    width: 660px;
+    width: 680px;
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
@@ -129,4 +129,113 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+/*Styles for the Modal*/
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+}
+
+.modal-sheet {
+    position: relative;
+    width: 500px;
+    background-color: white;
+    top: 25%;
+    left: 25%;
+}
+
+.modal-heading {
+    display: flex;
+    align-items: center;
+    padding: 0 1.5em;
+    border-bottom: 2px solid rgb(14, 183, 235);
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    border-radius: 20%;
+    border: 2px solid rgb(14, 183, 235);
+}
+
+.stats-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem 2rem;
+}
+
+.cancel:hover {
+    font-size: 1.5em;
+}
+
+.replay:hover {
+    font-size: 1.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 580px) {
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: auto;
+    }
+
+    .header>h1 {
+        text-align: center;
+        flex-basis: 100%;
+    }
+
+    .score-panel {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        justify-content: space-between;
+    }
+
+    .restart {
+        flex-basis: 10%;
+    }
+
+    .timer,
+    .stars {
+        flex-basis: 25%;
+    }
+
+    .deck {
+        width: 95%;
+    }
+
+    .deck .card {
+        width: 25%;
+    }
+
+    .logo,
+    .default {
+        width: 100%;
+    }
+
+    .logo>img,
+    .default>img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .modal-sheet {
+        width: 50%;
+    }
 }
