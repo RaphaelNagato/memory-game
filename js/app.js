@@ -181,7 +181,7 @@ function stopClock() {
 
 /* This function checks the number of moves so as to hide the stars*/
 function checkMoves() {
-    if (moves === 10 || moves === 24 || moves === 40) {
+    if (moves === 16 || moves === 30) {
         removeStar();
     }
 }
@@ -258,15 +258,23 @@ function resetGame() {
     shuffleCards();
     resetCards();
     startClock();
+    openedCards = [];
+    for (let card of cards) {
+        card.addEventListener("click", openCard);
+    };
+    matchedPairs = 0;
+
 }
 
 
 /* this fires when all the cards have been matched */
 function gameOver() {
-    showGameStats();
-    toggleModalClass();
-    stopClock();
     alert("You have won");
+    toggleModalClass();
+    showGameStats();
     cancel.removeEventListener("click", cancelEvent);
+    for (let card of cards) {
+        card.addEventListener("click", openCard);
+    }
 
 }
